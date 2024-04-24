@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.6",
+    "@grpc/proto-loader": "^0.7.12",
+    "google-protobuf": "^3.21.2"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "start:server": "node dist/server.js",
+    "start:client": "node dist/client.js",
+    "generate": "cd protos && grpc_tools_node_protoc --js_out=import_style=commonjs,binary:../src/static/ --grpc_out=grpc_js:../src/static/ helloworld.proto"
+  }
+}
